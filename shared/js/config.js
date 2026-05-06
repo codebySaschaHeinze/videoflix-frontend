@@ -3,34 +3,34 @@
  * Typically points to your backend server's API root.
  * @constant {string}
  */
-const API_BASE_URL = 'http://127.0.0.1:8000/api/';
+const API_BASE_URL = "https://api.videoflix.saschaheinze.de/api/";
 
 /**
  * Relative path for the login endpoint.
  * Used to authenticate users.
  * @constant {string}
  */
-const LOGIN_URL = 'login/';
+const LOGIN_URL = "login/";
 
 /**
  * Relative path for the registration endpoint.
  * Used to create new user accounts.
  * @constant {string}
  */
-const REGISTER_URL = 'register/';
+const REGISTER_URL = "register/";
 
 /**
  * Relative path for the "forgot password" endpoint.
  * Sends a password reset email to the user.
  * @constant {string}
  */
-const FORGET_PASSWORD_URL = 'password_reset/';
+const FORGET_PASSWORD_URL = "password_reset/";
 
 /**
  * Relative path for refreshing JWT tokens.
  * @constant {string}
  */
-const REFRESH_URL = 'token/refresh/'
+const REFRESH_URL = "token/refresh/";
 
 /**
  * Configuration for the activation flow.
@@ -41,9 +41,9 @@ const REFRESH_URL = 'token/refresh/'
  * @property {string} loginUrl - Path to the login page.
  */
 const ACTIVATION_CONFIG = {
-    successDelay: 2500,
-    errorDelay: 3000,
-    loginUrl: "./login.html"
+  successDelay: 2500,
+  errorDelay: 3000,
+  loginUrl: "./login.html",
 };
 
 /**
@@ -65,4 +65,4 @@ const TOAST_DURATION = 2000;
  * const url = URL_TO_INDEX_M3U8(5, '720p');
  * // url is 'video/5/720p/index.m3u8'
  */
-const URL_TO_INDEX_M3U8 = (id, resolution) => `video/${id}/${resolution}/index.m3u8`
+const URL_TO_INDEX_M3U8 = (id, resolution) => `video/${id}/${resolution}/index.m3u8`;
