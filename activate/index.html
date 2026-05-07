@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Videoflix - Activate Account</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="dark_bg">
+    <main class="activation_page font_white_color">
+      <section class="activation_card">
+        <h1 class="font_prime_color">Activate account</h1>
+
+        <p id="activation-message">Activating your account...</p>
+
+        <a class="activation_button" href="/pages/auth/login.html"> Go to login </a>
+      </section>
+    </main>
+
+    <script src="/shared/js/config.js"></script>
+    <script>
+      const messageElement = document.getElementById("activation-message");
+      const params = new URLSearchParams(window.location.search);
+      const uid = params.get("uid");
+      const token = params.get("token");
+
+      async function activateAccount() {
+        if (!uid || !token) {
+          messageElement.textContent = "Activation link is invalid.";
+          return;
+        }
+
+        try {
+          const response = await fetch(`${API_BASE_URL}activate/${uid}/${token}/`);
+
+          if (!response.ok) {
+            messageElement.textContent = "Activation failed. The link may be invalid or expired.";
+            return;
+          }
+
+          messageElement.textContent = "Your account has been activated successfully.";
+        } catch (error) {
+          messageElement.textContent = "Activation failed. Please try again later.";
+        }
+      }
+
+      activateAccount();
+    </script>
+  </body>
+</html>
