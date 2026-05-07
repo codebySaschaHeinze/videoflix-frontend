@@ -38,11 +38,15 @@
 }
 
 .activation_page {
-  min-height: calc(100vh - 160px);
+  min-height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 32px;
+
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("./assets/img/c0e32047c261007997e18cd1118a657c.jfif") center / cover no-repeat;
 }
 
 .activation_card {
@@ -55,7 +59,7 @@
   text-align: center;
   border-radius: 24px;
   border: 2px solid white;
-  background: linear-gradient(to right, rgba(104, 24, 169, 0.7), rgba(46, 62, 223, 0.7));
+  background: linear-gradient(to right, rgba(104, 24, 169, 0.8), rgba(46, 62, 223, 0.8));
 }
 
 .activation_card h1 {
